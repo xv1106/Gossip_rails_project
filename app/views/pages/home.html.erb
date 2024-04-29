@@ -1,0 +1,12 @@
+<!-- app/views/pages/home.html.erb -->
+<h1>Bienvenue sur The Gossip Project !</h1>
+<p>Ceci est la page d'accueil de notre application.</p>
+<p>Vous pouvez voir tous les potins créés ici :</p>
+<ul>
+  <% @gossips.each do |gossip| %>
+    <li>
+      <%= link_to gossip.title, gossip_path(gossip) %> - <%= gossip.user.first_name %>
+    </li>
+  <% end %>
+</ul>
+
